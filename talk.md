@@ -28,7 +28,7 @@ Operators: `+,-,*,/,%,**`
 % is modulo, ** is power 
 -->
 
-Expressions: `a+3, (a+b)/c, sin(x)`
+Expressions: `a+3, (a+b)/c`
 
 
 ! Pay attention at the version of Python:
@@ -142,7 +142,7 @@ When `else` gives access to a condition, too, use can be made of `elif`:
 >>> if x > y:
       help = x
       x = y
-      y = x
+      y = help
 >>> print(x,y)
 
 ```
@@ -480,7 +480,7 @@ Once created, it is not possible to modify which object is stored in each slot.
 TypeError: 'tuple' object does not support item assignment
 
 ```
-v
+
 From the other side, other manipulations are permitted:
 
 ```
@@ -493,7 +493,7 @@ From the other side, other manipulations are permitted:
 
 ```
 
-It is however very light to use instance methods:
+It is straight forward to use instance methods:
 
 ```
 >>> a=(4, None, 'stone')*3
@@ -503,6 +503,48 @@ It is however very light to use instance methods:
 True
 
 ```
+
+<!--
+When tuples are multiplied by an integer, the objects themselves are not copied, only the references to them.
+-->
+
+
+<!--
+
+## Unpacking Tuples
+
+```
+>>> tup = (4, 5, 6)
+>>> a, b, c = tup
+>>> b
+5
+
+```
+
+Or with nested tuples:
+
+```
+>>> tup = 4, 5, (6, 7)
+>>> a, b, (c, d) = tup
+>>> d
+7
+
+```
+
+With this functionality, variable names can be easily swapped:
+
+```
+>>> a = 2
+>>> b = 3
+>>> b, a = a, b
+>>> b
+2
+>>> a
+3
+
+```
+
+-->
 
 ---
 
